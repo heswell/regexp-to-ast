@@ -1,4 +1,4 @@
-const { RegExpParser, BaseRegExpVisitor } = require("../lib/regexp-to-ast")
+const { RegExpParser, BaseRegExpVisitor } = require("../dist/regexp-to-ast")
 const { expect } = require("chai")
 
 describe("The regexp AST visitor", () => {

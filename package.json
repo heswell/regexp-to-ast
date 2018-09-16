@@ -1,8 +1,9 @@
 {
-  "name": "regexp-to-ast",
+  "name": "@heswell/regexp-to-ast",
   "version": "0.3.5",
-  "main": "lib/regexp-to-ast.js",
-  "repository": "https://github.com/bd82/regexp-to-ast.git",
+  "main": "dist/regexp-to-ast.js",
+  "module": "lib/index.js",
+  "repository": "https://github.com/heswell/regexp-to-ast.git",
   "author": "Shahar Soel",
   "license": "MIT",
   "description": "Parses a Regular Expression and outputs an AST",
@@ -11,8 +12,8 @@
     "parser",
     "regular expression"
   ],
-  "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.0.1",
     "chai": "^4.1.2",
     "coveralls": "^3.0.0",
     "eslint": "^5.2.0",
@@ -26,10 +27,14 @@
     "npm-run-all": "^4.1.2",
     "nyc": "^12.0.2",
     "prettier": "1.14.0",
+    "rollup": "^0.66.0",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-node-resolve": "^3.4.0",
     "semver": "^5.5.0",
     "typescript": "^2.8.1"
   },
   "scripts": {
+    "build": "rollup -c",
     "release": "git fetch && git rebase && node scripts/release.js",
     "ci_full_flow": "npm-run-all type_check test check_coverage verify_format",
     "test": "nyc mocha \"./test/**/*spec.js\"",
